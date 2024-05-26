@@ -39,6 +39,8 @@
         if(empty($title_err) && empty($description_err)){
             if(editBlog($id,$title,$description,$image,$url,$isActive)){
                 $_SESSION["alert_message"] .= "<div class='alert alert-success mb-0 text-center'>Blog başarıyla güncellendi.</div>";
+                header('Location: index.php');
+                exit();
             }
         } else {
             if (!empty($title_err)) {

@@ -36,6 +36,8 @@
         if(empty($title_err) && empty($description_err)){
             if(createBlog($title,$description,$image,$url)){
                 $_SESSION["alert_message"] .= "<div class='alert alert-success mb-0 text-center'>Blog başarıyla oluşturuldu.</div>";
+                header('Location: index.php');
+                exit();
             }
         } else {
             if (!empty($title_err)) {
